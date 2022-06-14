@@ -1,10 +1,32 @@
+//获取顶部图片元素，滚动到元素的下面，使得其他元素加载完整
+var post_header = document.getElementsByClassName('TitleImage')
+scrollTo(0,post_header[0].clientHeight)
+
+//创建待删除的元素列表
 var element_list = []
 
+//删除元素的函数，等待调用
 function del_elements(class_name){
     var e = document.getElementsByClassName(class_name)
     e[0].remove()
 }
 
-element_list.push('Sticky ColumnPageHeader is-fixed css-1l12z7y','like','Popover ShareMenu','CornerButtons','Sticky RichContent-actions is-fixed is-bottom','css-1ynzxqw')
+//压满待删除元素
+element_list.push(
+    'Sticky ColumnPageHeader is-fixed css-1l12z7y',
+    'like',
+    'Popover ShareMenu',
+    'CornerButtons',
+    'Sticky RichContent-actions is-fixed is-bottom',
+    'css-1ynzxqw')
 
-element_list.forEach(del_elements)
+//等待后执行删除函数
+setTimeout(
+	function(){
+		try{
+			element_list.forEach(del_elements)
+		}catch(e){
+			console.error('哦吼！有某个元素没有显示出来喔。请刷新后重试。')
+		}
+	},
+	1500)
