@@ -5,6 +5,6 @@ function del_elements(class_name){
     e[0].remove()
 }
 
-element_list.push('Sticky ColumnPageHeader is-fixed css-1l12z7y','like','Popover ShareMenu','CornerButtons','Sticky RichContent-actions is-fixed is-bottom')
+element_list.push('Sticky ColumnPageHeader is-fixed css-1l12z7y','like','Popover ShareMenu','CornerButtons','Sticky RichContent-actions is-fixed is-bottom','css-1ynzxqw')
 
 element_list.forEach(del_elements)
